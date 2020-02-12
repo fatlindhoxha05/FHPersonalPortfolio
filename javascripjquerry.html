@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Java Script and JQuerry</title>
+
+</head>
+<body>
+  	<form method="post" enctype="multipart/form-data" action="flm.html" onsubmit="return Valido()">
+  		
+  			<p>Sheno emrin <input required="Sheno emrin" type="text"  id="emri"></p>
+  			<p>Sheno moshen <input  required="Sheno moshen " type="number"  id="mosha"></p>
+  		 <input type="submit" name="submit" id="submit" value="Submit">
+  			<div id="gabimet" style="background-color: red; border: 2px solid black;">
+  				
+  			</div>
+
+
+
+
+
+  	</form>
+
+
+
+  	<script >
+  		function Valido(){
+  			var e = getElementById("emri").value;
+  			var m = getElementById("mosha").value;
+
+
+
+  			reporti = "";
+  			if(e.length >5){
+  				alert("Emri duhet te kete se paku 5 karaktere ");
+
+  			}
+
+  			if(m < 18 ){
+  				alert(" Lejohen vetem antaret mbi moshen 18 vjeq  ");
+ 
+  			}
+  			
+
+  			return true;
+  		}
+
+  	</script>
+</body>
+</html>
