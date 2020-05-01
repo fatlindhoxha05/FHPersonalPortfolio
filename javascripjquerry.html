@@ -1,49 +1,50 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-	<title>Java Script and JQuerry</title>
-
+<meta charset="utf-8">
+<title>Body Mass Index</title>
+	<style>
+		#raporti {
+			padding: 1em;
+			background-color: lightblue;
+			border:2px solid black;
+		}
+	</style>
 </head>
+
 <body>
-  	<form method="post" enctype="multipart/form-data" action="flm.html" onsubmit="return Valido()">
-  		
-  			<p>Sheno emrin <input required="Sheno emrin" type="text"  id="emri"></p>
-  			<p>Sheno moshen <input  required="Sheno moshen " type="number"  id="mosha"></p>
-  		 <input type="submit" name="submit" id="submit" value="Submit">
-  			<div id="gabimet" style="background-color: red; border: 2px solid black;">
-  				
-  			</div>
+	<p>Sheno gjatesine (m): <input type="text" id="gjatesia"></p>
+	<p>Sheno peshen (kg): <input type="text" id="pesha"></p>
+	<button id="butoni" onClick="Vepro()">Kliko</button>
+	<div id="raporti"></div>
+	
+	<script>
+	function Vepro() {
+		gj = document.getElementById("gjatesia").value
+		p = document.getElementById("pesha").value
+		
+		bmi = p / (gj * gj)
+	
+		if (bmi < 18.5) {
+			rez = "I dobet"
+		}
+		
+		if (bmi>=18.5 && bmi<25) {
+			rez = "Normal"
+		}
+		
+		if (bmi>=25 && bmi<30) {
+			rez = "Mbipeshe"
+		}
+		
+		if (bmi >= 30) {
+			rez = "Obez"
+		}
+		
+		document.getElementById("raporti").innerHTML = rez + " " + bmi.toFixed(20)
 
-
-
-
-
-  	</form>
-
-
-
-  	<script >
-  		function Valido(){
-  			var e = getElementById("emri").value;
-  			var m = getElementById("mosha").value;
-
-
-
-  			reporti = "";
-  			if(e.length >5){
-  				alert("Emri duhet te kete se paku 5 karaktere ");
-
-  			}
-
-  			if(m < 18 ){
-  				alert(" Lejohen vetem antaret mbi moshen 18 vjeq  ");
- 
-  			}
-  			
-
-  			return true;
-  		}
-
-  	</script>
+	}
+	</script>
 </body>
 </html>
